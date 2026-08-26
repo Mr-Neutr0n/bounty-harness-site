@@ -1,7 +1,7 @@
-/* BountyHarness — Sophisticated Hacker
-   Aurva/Linear-inspired dark: deep ink navy, restrained accent, quiet surfaces.
-   Accent (emerald) appears only on primary CTAs, active nav, and key numbers.
-   Headings + body use sans; mono is reserved for code and stats. */
+/* BountyHarness — Kritt-grade hacker
+   Deep ink navy, restrained teal accent, quiet surfaces.
+   Kritt craft applied to dark ops: pill CTAs, orbed hero, tracked display,
+   generous section rhythm. Mono only for code/traces; sans for everything else. */
 
 :root {
   --void: #070B18;
@@ -72,8 +72,8 @@ main { display: block; padding-block: 0 72px; }
 
 /* type */
 h1, h2, h3 { font-family: var(--sans); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; color: var(--ink); }
-h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; letter-spacing: -0.04em; }
-h2 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); }
+h1 { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.05em; line-height: 0.98; }
+h2 { font-size: clamp(1.35rem, 2.5vw, 1.75rem); letter-spacing: -0.035em; }
 h3 { font-size: 1rem; }
 p { margin: 0 0 1rem; color: var(--text-2); font-family: var(--sans); }
 .lede { font-size: 1.05rem; line-height: 1.65; color: var(--text-2); max-width: 58ch; font-family: var(--sans); }
@@ -82,11 +82,11 @@ code, pre, .mono { font-family: var(--mono); }
 code.inline { background: var(--surface-2); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px; font-size: 0.82em; color: var(--text); }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--mono); font-size: 0.68rem; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.1em;
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.12em;
   color: var(--text-3); margin-bottom: 12px;
 }
-.eyebrow::before { content: ""; width: 16px; height: 1px; background: var(--accent); display: inline-block; }
+.eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: inline-block; box-shadow: 0 0 8px var(--accent-glow); flex-shrink: 0; }
 .eyebrow.accent { color: var(--accent); }
 .eyebrow.warn { color: var(--amber); }
 .eyebrow.warn::before { background: var(--amber); }
@@ -130,7 +130,7 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 /* buttons */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
-  border-radius: 7px; padding: 9px 16px;
+  border-radius: 999px; padding: 12px 20px;
   font-family: var(--sans); font-size: 0.82rem; font-weight: 600;
   letter-spacing: -0.01em;
   text-decoration: none; cursor: pointer;
@@ -138,21 +138,26 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   transition: all 150ms var(--ease);
 }
 .btn-primary { background: var(--ink); color: var(--void); border-color: var(--ink); }
-.btn-primary:hover { background: #fff; color: var(--void); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,255,255,0.1); }
+.btn-primary:hover { background: #fff; color: var(--void); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,255,255,0.12); }
 .btn-ghost { background: transparent; color: var(--text-2); border-color: var(--border); }
 .btn-ghost:hover { color: var(--ink); border-color: var(--border-strong); background: var(--surface); }
-.btn-sm { padding: 6px 12px; font-size: 0.78rem; }
+.btn-sm { padding: 8px 16px; font-size: 0.78rem; }
 .btn .arrow { transition: transform 150ms var(--ease); }
 .btn:hover .arrow { transform: translateX(2px); }
 
 /* hero */
 .hero {
-  padding-block: 56px 40px;
+  position: relative; overflow: hidden;
+  padding-block: 64px 48px;
   border-bottom: 1px solid var(--border);
-  background:
-    radial-gradient(ellipse 70% 50% at 50% -15%, rgba(45,212,191,0.06), transparent 60%),
-    linear-gradient(180deg, var(--bg) 0%, var(--void) 100%);
+  background: var(--void);
 }
+.hero-orb {
+  position: absolute; border-radius: 50%; pointer-events: none;
+  filter: blur(60px); opacity: 0.5;
+}
+.hero-orb-1 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 70%); top: -180px; left: -80px; }
+.hero-orb-2 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(45,212,191,0.04) 0%, transparent 70%); top: -100px; right: -120px; }
 .hero-grid { display: grid; gap: 36px; align-items: center; }
 @media (min-width: 960px) { .hero-grid { grid-template-columns: 1fr 460px; } }
 .hero h1 { margin-bottom: 16px; }
