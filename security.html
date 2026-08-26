@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security — BountyHarness</title>
+<meta name="description" content="BountyHarness safety model — 4 tiers, scope gating, circuit breaker, and evidence standards.">
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300FF41'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%23050507'%3E$%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header class="site-nav"><div class="shell nav-inner">
+  <a class="brand" href="./index.html"><span class="brand-mark">$</span> BountyHarness</a>
+  <nav class="nav-links"><a href="./how-it-works.html">How it works</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html" aria-current="page">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></nav>
+  <nav class="nav-mobile"><details><summary aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></summary><div class="menu-panel"><a href="./how-it-works.html">How it works</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html" aria-current="page">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></div></details></nav>
+  <span class="nav-cta"><a class="btn btn-primary btn-sm" href="./install.html">Install</a></span>
+</div></header>
+<main id="main"><div class="shell narrow">
+  <section class="section" style="padding-top:48px;">
+    <span class="eyebrow warn">Authorized testing only</span>
+    <h1>Safety is not<br>a suggestion.</h1>
+    <p class="lede">BountyHarness is built like a weapon with a safety. Every workflow declares its tier. The harness enforces it.</p>
+  </section>
+
+  <section class="section">
+    <h2>Safety Tiers</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Tier</th><th>Behavior</th><th>Gate</th></tr></thead>
+      <tbody>
+        <tr><td><span class="chip" style="background:var(--surface-2);">passive</span></td><td>Read-only discovery or local analysis. No target interaction.</td><td>None</td></tr>
+        <tr><td><span class="chip" style="background:rgba(0,212,255,0.1);color:var(--cyan);border-color:rgba(0,212,255,0.2);">active-safe</span></td><td>Interacts with target but remains read-only.</td><td>None — but rate-limited</td></tr>
+        <tr><td><span class="chip amber">intrusive</span></td><td>Payloads, fuzzing, WAF-triggering scans.</td><td>Requires scope file. Without one, auto-caps to active-safe.</td></tr>
+        <tr><td><span class="chip" style="background:var(--red-dim);color:var(--red);border-color:rgba(255,51,68,0.2);">destructive-manual</span></td><td>Data modification, privilege changes.</td><td>Never automated. Explicit human approval only.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout callout-warn"><strong>Intrusive auto-cap:</strong> If you run <code class="inline">bb-hunt</code> without <code class="inline">--scope-file</code>, the harness caps you to <code class="inline">active-safe</code> — even if you asked for intrusive. This is enforced in code.</div>
+  </section>
+
+  <section class="section">
+    <h2>Scope Guardrails</h2>
+    <ul>
+      <li><strong>Scope files</strong> (<code class="inline">scope-manager</code> skill) define what's in and out of scope. Every workflow validates scope before intrusive testing.</li>
+      <li><strong>Circuit breaker</strong> kills a target after repeated consecutive failures — prevents hammering a WAF into a ban.</li>
+      <li><strong>Rate limits</strong> from RunContext or per-workflow defaults. Every workflow respects them.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Evidence Standard</h2>
+    <p>Scanner output is never a finding. A reportable issue needs:</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Artifact</th><th>Path</th></tr></thead>
+      <tbody>
+        <tr><td>Full request with headers</td><td><code class="inline">evidence/&lt;finding&gt;/request.txt</code></td></tr>
+        <tr><td>Full response headers + body</td><td><code class="inline">evidence/&lt;finding&gt;/response.txt</code></td></tr>
+        <tr><td>Screenshot or visual proof</td><td><code class="inline">evidence/&lt;finding&gt;/screenshot.png</code></td></tr>
+        <tr><td>Reproduction script</td><td><code class="inline">evidence/&lt;finding&gt;/poc.sh</code></td></tr>
+        <tr><td>Tool versions + timestamp</td><td>evidence manifest</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout callout-info"><strong>Local-only.</strong> Evidence is gitignored. Nothing leaves your machine unless you submit the report. Run <code class="inline">gitleaks detect --source . --no-git -v</code> before committing anything that touched target data.</div>
+  </section>
+
+  <section class="section">
+    <h2>What This Is Not</h2>
+    <div class="callout callout-danger"><strong>Not a license to test random systems.</strong> BountyHarness is an orchestration framework for <em>authorized</em> research. Many workflows produce candidates that require human judgement, reproduction, and impact proof. Use it only on systems you own or are explicitly authorized to test.</div>
+  </section>
+
+  <section class="section" style="padding-bottom:64px;">
+    <h2>Reporting Security Issues</h2>
+    <p>Found a vulnerability in BountyHarness itself? See <a href="https://github.com/Mr-Neutr0n/bounty-harness/blob/main/SECURITY.md">SECURITY.md</a> on GitHub. Do not open a public issue for security reports.</p>
+  </section>
+
+</div></main>
+<footer class="site"><div class="shell footer-inner">
+  <span><span style="color:var(--accent)">◆</span> MIT · Authorized testing only</span>
+  <span><a href="https://github.com/Mr-Neutr0n/bounty-harness">GitHub</a></span>
+</div></footer>
+</body>
+</html>

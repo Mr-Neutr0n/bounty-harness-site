@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BountyHarness — autonomous bug bounty agent harness</title>
+<meta name="description" content="46 skill packages. Safety tiers. Evidence-backed findings. BountyHarness is the open-source agent harness for authorized bug bounty hunting.">
+<meta name="theme-color" content="#00FF41">
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300FF41'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%23050507'%3E$%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav"><div class="shell nav-inner">
+  <a class="brand" href="./index.html" aria-current="page">
+    <span class="brand-mark">$</span>
+    BountyHarness <span style="color:var(--accent);font-size:0.7rem;letter-spacing:0.08em;">v3.1</span>
+  </a>
+  <nav class="nav-links" aria-label="Pages">
+    <a href="./how-it-works.html">How it works</a>
+    <a href="./skills.html">Skills</a>
+    <a href="./docs.html">Docs</a>
+    <a href="./security.html">Security</a>
+    <a href="./compare.html">Compare</a>
+    <a href="./faq.html">FAQ</a>
+  </nav>
+  <nav class="nav-mobile" aria-label="Menu"><details><summary aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></summary>
+    <div class="menu-panel"><a href="./how-it-works.html">How it works</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a><a href="./install.html">Install →</a></div>
+  </details></nav>
+  <span class="nav-cta"><a class="btn btn-primary btn-sm" href="./install.html">Install</a></span>
+</div></header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero"><div class="shell">
+  <div class="hero-grid">
+    <div>
+      <span class="eyebrow">Authorized testing only · MIT licensed · No telemetry</span>
+      <h1>Your agent doesn't<br>guess. It <span class="accent-text">hunts.</span></h1>
+      <p class="lede">46 skill packages. 4 safety tiers. Evidence or it didn't happen. BountyHarness gives your AI agent a disciplined operating model for bug bounty — from recon to report, with receipts.</p>
+      <div class="hero-actions">
+        <div class="command-bar" style="flex:1;max-width:420px;">
+          <span class="prompt">$</span>
+          <code id="install-cmd">curl -fsSL https://raw.githubusercontent.com/Mr-Neutr0n/bounty-harness/main/install.sh | sh</code>
+          <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button>
+        </div>
+        <a class="btn btn-ghost" href="./docs.html">Read the docs →</a>
+      </div>
+      <div class="trust-row">
+        <span class="chip neon">◆ MIT license</span>
+        <span class="chip">◆ 99 tools registered</span>
+        <span class="chip">◆ Works on VPS + Mac</span>
+        <span class="chip amber">◆ Scope-gated by default</span>
+      </div>
+    </div>
+    <div class="terminal">
+      <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="title">bounty-harness — zsh</span></div>
+      <div class="terminal-body">
+        <div class="line"><span class="prompt">$</span><span class="cmd"> bb-hunt https://target.com --time-budget 2h</span></div>
+        <div class="line"><span class="dim">[recon]  847 subdomains → 23 live hosts</span></div>
+        <div class="line"><span class="dim">[model]  fintech/api archetype · 12 surfaces</span></div>
+        <div class="line"><span class="dim">[plan]   18 techniques ranked — XSS P1, IDOR P1, SSRF P2</span></div>
+        <div class="line"><span class="success">  [xss]    reflected ✓ — evidence/xss-01/</span></div>
+        <div class="line"><span class="success">  [api]    BOLA ✓ — evidence/api-03/</span></div>
+        <div class="line"><span class="dim">  [sqli]   no findings (verified clean)</span></div>
+        <div class="line"><span class="prompt">$</span><span class="cmd"> bb-run reporting batch-generate</span></div>
+        <div class="line"><span class="success">  report ready → evidence/ready/report.md</span></div>
+        <div class="line"><span class="prompt">$</span><span class="cmd" style="color:var(--accent)"> █</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- STATS -->
+<div class="shell"><section class="section" style="padding-top:32px;">
+  <div class="stats-strip" style="border-radius:8px;">
+    <div class="stat"><span class="num">46</span><span class="label">skill packages</span><span class="sub">recon → reporting</span></div>
+    <div class="stat"><span class="num">99</span><span class="label">tools registered</span><span class="sub">subfinder → nuclei</span></div>
+    <div class="stat"><span class="num">4</span><span class="label">safety tiers</span><span class="sub">passive → destructive</span></div>
+    <div class="stat"><span class="num">0</span><span class="label">telemetry</span><span class="sub">local-only evidence</span></div>
+  </div>
+</section></div>
+
+<!-- FEATURE CARDS -->
+<div class="shell"><section class="section">
+  <span class="eyebrow">Why BountyHarness</span>
+  <h2 style="margin-bottom:24px;">One harness. Every bug class.</h2>
+  <div class="cards">
+    <article class="card neon-hover"><div class="card-icon">◈</div><h3>Fat skills, thin harness</h3><p>46 skills hold the real logic — scripts, payloads, runbooks, evidence rules. The harness just dispatches. Add a bug class without touching core.</p></article>
+    <article class="card neon-hover"><div class="card-icon">⬡</div><h3>Autonomous campaigns</h3><p><code class="inline">bb-hunt target.com</code> bootstraps context, runs recon → plan → execute → report from one URL. Bounded by time budget, resumable, scope-gated.</p></article>
+    <article class="card neon-hover"><div class="card-icon">⬢</div><h3>Evidence or it didn't happen</h3><p>Every finding needs request, response, PoC, and impact proof. Scanner output is never a report. Impact-verifier gates what gets submitted.</p></article>
+    <article class="card"><div class="card-icon">⬣</div><h3>Safety tiers that actually gate</h3><p>Passive, active-safe, intrusive, destructive-manual. Intrusive auto-caps to active-safe without a scope file. Circuit breaker kills runaway targets.</p></article>
+    <article class="card"><div class="card-icon">⬔</div><h3>Tool registry, not install hell</h3><p>99 tools mapped by capability and risk tier. <code class="inline">bb-tools doctor</code> checks health. <code class="inline">bb-tools install --profile recon</code> just works.</p></article>
+    <article class="card"><div class="card-icon">⬕</div><h3>Knowledge that compounds</h3><p>Program memory, asset graphs, traffic corpus, technique KB. Each engagement makes the next one sharper — without leaking secrets.</p></article>
+  </div>
+</section></div>
+
+<!-- HOW IT WORKS STRIP -->
+<div class="shell"><section class="section">
+  <span class="eyebrow">The loop</span>
+  <h2 style="margin-bottom:24px;">Six steps. Every engagement.</h2>
+  <div class="artifact" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;background:var(--surface);">
+    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">①</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">UNDERSTAND<br><span style="color:var(--text-dim);">target + scope</span></div></div>
+    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">②</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">MODEL<br><span style="color:var(--text-dim);">assets + surfaces</span></div></div>
+    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">③</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">PLAN<br><span style="color:var(--text-dim);">ranked techniques</span></div></div>
+    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">④</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">EXECUTE<br><span style="color:var(--text-dim);">rate-limited</span></div></div>
+    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">⑤</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">VERIFY<br><span style="color:var(--text-dim);">impact + PoC</span></div></div>
+    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">⑥</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">REPORT<br><span style="color:var(--text-dim);">evidence pack</span></div></div>
+  </div>
+  <p style="text-align:center;margin-top:16px;"><a href="./how-it-works.html" style="font-size:0.85rem;">See the full architecture →</a></p>
+</section></div>
+
+<!-- CTA -->
+<div class="shell"><section class="section" style="text-align:center;padding-bottom:64px;">
+  <h2 style="margin-bottom:12px;">Ready to hunt?</h2>
+  <p style="max-width:50ch;margin:0 auto 20px;color:var(--text-2);">Install in 30 seconds. Works on macOS and Linux. No account, no telemetry, no BS.</p>
+  <a class="btn btn-primary" href="./install.html">Get started — install in 30s</a>
+  <p class="small" style="margin-top:12px;">Requires Python 3.11+ · Git · Works from any directory</p>
+</section></div>
+
+</main>
+<footer class="site"><div class="shell footer-inner">
+  <span><span style="color:var(--accent)">◆</span> MIT License · Use only on systems you own or are authorized to test.</span>
+  <span><a href="https://github.com/Mr-Neutr0n/bounty-harness">GitHub</a> · <a href="./docs.html">Docs</a> · <a href="./security.html">Security</a></span>
+</div></footer>
+</body>
+</html>

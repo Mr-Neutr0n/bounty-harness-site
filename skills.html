@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills — BountyHarness</title>
+<meta name="description" content="46 skill packages covering every bug class from recon to reporting.">
+<link rel="stylesheet" href="./style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300FF41'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%23050507'%3E$%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip" href="#main">Skip</a>
+<header class="site-nav"><div class="shell nav-inner">
+  <a class="brand" href="./index.html"><span class="brand-mark">$</span> BountyHarness</a>
+  <nav class="nav-links"><a href="./how-it-works.html">How it works</a><a href="./skills.html" aria-current="page">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></nav>
+  <nav class="nav-mobile"><details><summary aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></summary><div class="menu-panel"><a href="./how-it-works.html">How it works</a><a href="./skills.html" aria-current="page">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></div></details></nav>
+  <span class="nav-cta"><a class="btn btn-primary btn-sm" href="./install.html">Install</a></span>
+</div></header>
+<main id="main"><div class="shell">
+  <section class="section" style="padding-top:48px;">
+    <span class="eyebrow">46 skill packages</span>
+    <h1>Every bug class.<br>One harness.</h1>
+    <p class="lede">Each skill is a self-contained package: scripts, payloads, runbooks, evidence rules, and reporting guidance. The harness dispatches. The skills do the hunting.</p>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size:1rem;margin-bottom:16px;color:var(--text-2);">Recon & Planning</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><span class="skill-num">01</span><h3><code>recon</code></h3><p>Subdomains, live hosts, crawling, JS recon, asset inventory</p></div>
+      <div class="skill-card"><span class="skill-num">20</span><h3><code>domain-model</code></h3><p>Target archetype classification and attack surface mapping</p></div>
+      <div class="skill-card"><span class="skill-num">22</span><h3><code>coverage</code></h3><p>Coverage ledger and gap reporting across standards</p></div>
+      <div class="skill-card"><span class="skill-num">23</span><h3><code>technique-kb</code></h3><p>Technique catalog with preconditions, signals, safety</p></div>
+      <div class="skill-card"><span class="skill-num">24</span><h3><code>planner</code></h3><p>Domain-driven ranked test plan generator</p></div>
+      <div class="skill-card"><span class="skill-num">30</span><h3><code>asset-graph</code></h3><p>Persistent SQLite asset graph with hotlist + delta</p></div>
+      <div class="skill-card"><span class="skill-num">29</span><h3><code>traffic-corpus</code></h3><p>HAR/Burp/mitmproxy import, route normalization</p></div>
+      <div class="skill-card"><span class="skill-num">39</span><h3><code>campaign</code></h3><p>Autonomous recon → report from one URL</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size:1rem;margin-bottom:16px;color:var(--text-2);">Web Vulnerabilities</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><span class="skill-num">02</span><h3><code>xss</code></h3><p>Reflected, stored, DOM, blind XSS, CSP checks</p></div>
+      <div class="skill-card"><span class="skill-num">03</span><h3><code>sqli</code></h3><p>Error, blind, time-based, union, NoSQL injection</p></div>
+      <div class="skill-card"><span class="skill-num">04</span><h3><code>ssrf</code></h3><p>Direct, blind, parser-bypass, cloud metadata</p></div>
+      <div class="skill-card"><span class="skill-num">05</span><h3><code>rce</code></h3><p>Command injection, SSTI, LFI/RFI</p></div>
+      <div class="skill-card"><span class="skill-num">08</span><h3><code>file-upload</code></h3><p>Extension, content-type, polyglot, SVG bypass</p></div>
+      <div class="skill-card"><span class="skill-num">09</span><h3><code>cors-csrf</code></h3><p>CORS, CSRF, SameSite, origin behavior</p></div>
+      <div class="skill-card"><span class="skill-num">10</span><h3><code>race-condition</code></h3><p>Concurrent requests, TOCTOU, timing windows</p></div>
+      <div class="skill-card"><span class="skill-num">19</span><h3><code>http-protocol</code></h3><p>Request smuggling, cache poisoning, parser diffs</p></div>
+      <div class="skill-card"><span class="skill-num">15</span><h3><code>nuclei-scanner</code></h3><p>Scope-aware nuclei template execution</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size:1rem;margin-bottom:16px;color:var(--text-2);">Auth, API & Business Logic</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><span class="skill-num">06</span><h3><code>auth</code></h3><p>JWT, OAuth, session, MFA, password reset</p></div>
+      <div class="skill-card"><span class="skill-num">07</span><h3><code>api</code></h3><p>REST, GraphQL, BOLA/IDOR, mass assignment</p></div>
+      <div class="skill-card"><span class="skill-num">28</span><h3><code>persona</code></h3><p>Attacker/victim/admin persona management</p></div>
+      <div class="skill-card"><span class="skill-num">31</span><h3><code>cross-account</code></h3><p>Cross-persona replay for BOLA/IDOR</p></div>
+      <div class="skill-card"><span class="skill-num">32</span><h3><code>business-logic</code></h3><p>Workflow state machine testing</p></div>
+      <div class="skill-card"><span class="skill-num">34</span><h3><code>impact-verifier</code></h3><p>Candidate → bounty-grade verification gate</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size:1rem;margin-bottom:16px;color:var(--text-2);">Cloud · Mobile · Browser · AI</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><span class="skill-num">11</span><h3><code>cloud</code></h3><p>S3, buckets, IAM, metadata checks</p></div>
+      <div class="skill-card"><span class="skill-num">12</span><h3><code>mobile</code></h3><p>APK analysis, deeplinks, cert pinning</p></div>
+      <div class="skill-card"><span class="skill-num">18</span><h3><code>modern-browser</code></h3><p>WebGPU, WASM, XS-Leaks, isolation</p></div>
+      <div class="skill-card"><span class="skill-num">17</span><h3><code>ai-llm</code></h3><p>Prompt injection, tool abuse, exfiltration</p></div>
+      <div class="skill-card"><span class="skill-num">35</span><h3><code>agent-safety</code></h3><p>Guardrails against prompt injection in target</p></div>
+      <div class="skill-card"><span class="skill-num">33</span><h3><code>oob-infra</code></h3><p>Interactsh OOB callback infrastructure</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size:1rem;margin-bottom:16px;color:var(--text-2);">Specialized Audits</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><span class="skill-num">40</span><h3><code>cicd-security</code></h3><p>Workflow injection, runner poisoning, OIDC theft</p></div>
+      <div class="skill-card"><span class="skill-num">41</span><h3><code>graphql-audit</code></h3><p>Introspection, batching DoS, aliasing IDOR</p></div>
+      <div class="skill-card"><span class="skill-num">42</span><h3><code>web3-audit</code></h3><p>DeFi accounting, reentrancy, oracle, flash loans</p></div>
+      <div class="skill-card"><span class="skill-num">43</span><h3><code>meme-coin-audit</code></h3><p>Rug-pull, SPL freeze/mint authority, LP drain</p></div>
+      <div class="skill-card"><span class="skill-num">45</span><h3><code>identity-domain</code></h3><p>NTLM leaks, ADCS/ADFS, Entra tenant recon</p></div>
+      <div class="skill-card"><span class="skill-num">14</span><h3><code>privesc</code></h3><p>Linux, Docker, SUID, capabilities, cron</p></div>
+      <div class="skill-card"><span class="skill-num">46</span><h3><code>binary-analysis</code></h3><p>PE triage, x64dbg MCP dynamic analysis</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="font-size:1rem;margin-bottom:16px;color:var(--text-2);">Research & Reporting</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><span class="skill-num">13</span><h3><code>osint</code></h3><p>Email, username, GitHub, Google dorks</p></div>
+      <div class="skill-card"><span class="skill-num">37</span><h3><code>vuln-intel</code></h3><p>CVE tracking, disclosed reports, PoCs</p></div>
+      <div class="skill-card"><span class="skill-num">21</span><h3><code>standard-catalog</code></h3><p>WSTG, ASVS, API Top 10, VRT, CWE mappings</p></div>
+      <div class="skill-card"><span class="skill-num">16</span><h3><code>reporting</code></h3><p>Evidence manifests, CVSS, batch export</p></div>
+      <div class="skill-card"><span class="skill-num">36</span><h3><code>program-memory</code></h3><p>Per-program knowledge persistence</p></div>
+      <div class="skill-card"><span class="skill-num">38</span><h3><code>scope-manager</code></h3><p>Scope validation and guardrails</p></div>
+      <div class="skill-card"><span class="skill-num">44</span><h3><code>triage-validation</code></h3><p>7-question gate before submission</p></div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:64px;">
+    <h2 style="font-size:1rem;margin-bottom:16px;color:var(--text-2);">Toolkit Improvement</h2>
+    <div class="skill-grid">
+      <div class="skill-card"><span class="skill-num">26</span><h3><code>evaluation-harness</code></h3><p>Vulnerable fixtures, precision/recall/F1</p></div>
+      <div class="skill-card"><span class="skill-num">27</span><h3><code>skill-scientist</code></h3><p>Hypothesize, run, review, propose improvements</p></div>
+      <div class="skill-card"><span class="skill-num">25</span><h3><code>auto-research</code></h3><p>Public knowledge import and deduplication</p></div>
+    </div>
+    <p style="margin-top:24px;"><a href="./docs.html">Read the docs →</a> · <a href="./install.html">Install →</a></p>
+  </section>
+
+</div></main>
+<footer class="site"><div class="shell footer-inner">
+  <span><span style="color:var(--accent)">◆</span> 46 skills · MIT · No telemetry</span>
+  <span><a href="https://github.com/Mr-Neutr0n/bounty-harness">GitHub</a> · <a href="./security.html">Security</a></span>
+</div></footer>
+</body>
+</html>
