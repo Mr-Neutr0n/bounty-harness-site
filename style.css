@@ -202,8 +202,7 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   overflow: hidden;
 }
 .command-bar .prompt { color: var(--text-3); }
-.command-bar code { flex: 1; color: var(--text); background: none; border: 0; padding: 0; font-size: 0.78rem; white-space: nowrap; overflow-x: auto; scrollbar-width: none; }
-.command-bar code::-webkit-scrollbar { display: none; }
+.command-bar code { flex: 1; color: var(--text); background: none; border: 0; padding: 0; font-size: 0.75rem; overflow-wrap: break-word; word-break: break-word; min-width: 0; }
 .copy-btn {
   display: inline-flex; align-items: center; gap: 5px;
   background: var(--surface-2); color: var(--text-3);
