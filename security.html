@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Security — BountyHarness</title>
-<meta name="description" content="BountyHarness safety model — 4 tiers, scope gating, circuit breaker, and evidence standards.">
+<title>Security: BountyHarness</title>
+<meta name="description" content="BountyHarness safety model: 4 tiers, scope gating, circuit breaker, and evidence standards.">
 <link rel="stylesheet" href="./style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300FF41'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%23050507'%3E$%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070B18'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%232DD4BF'%3E$%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <header class="site-nav"><div class="shell nav-inner">
@@ -27,19 +27,19 @@
       <thead><tr><th>Tier</th><th>Behavior</th><th>Gate</th></tr></thead>
       <tbody>
         <tr><td><span class="chip" style="background:var(--surface-2);">passive</span></td><td>Read-only discovery or local analysis. No target interaction.</td><td>None</td></tr>
-        <tr><td><span class="chip" style="background:rgba(0,212,255,0.1);color:var(--cyan);border-color:rgba(0,212,255,0.2);">active-safe</span></td><td>Interacts with target but remains read-only.</td><td>None — but rate-limited</td></tr>
+        <tr><td><span class="chip" style="background:rgba(0,212,255,0.1);color:var(--cyan);border-color:rgba(0,212,255,0.2);">active-safe</span></td><td>Interacts with target but remains read-only.</td><td>None, but rate-limited</td></tr>
         <tr><td><span class="chip amber">intrusive</span></td><td>Payloads, fuzzing, WAF-triggering scans.</td><td>Requires scope file. Without one, auto-caps to active-safe.</td></tr>
         <tr><td><span class="chip" style="background:var(--red-dim);color:var(--red);border-color:rgba(255,51,68,0.2);">destructive-manual</span></td><td>Data modification, privilege changes.</td><td>Never automated. Explicit human approval only.</td></tr>
       </tbody>
     </table></div>
-    <div class="callout callout-warn"><strong>Intrusive auto-cap:</strong> If you run <code class="inline">bb-hunt</code> without <code class="inline">--scope-file</code>, the harness caps you to <code class="inline">active-safe</code> — even if you asked for intrusive. This is enforced in code.</div>
+    <div class="callout callout-warn"><strong>Intrusive auto-cap:</strong> If you run <code class="inline">bb-hunt</code> without <code class="inline">--scope-file</code>, the harness caps you to <code class="inline">active-safe</code>, even if you asked for intrusive. This is enforced in code.</div>
   </section>
 
   <section class="section">
     <h2>Scope Guardrails</h2>
     <ul>
       <li><strong>Scope files</strong> (<code class="inline">scope-manager</code> skill) define what's in and out of scope. Every workflow validates scope before intrusive testing.</li>
-      <li><strong>Circuit breaker</strong> kills a target after repeated consecutive failures — prevents hammering a WAF into a ban.</li>
+      <li><strong>Circuit breaker</strong> kills a target after repeated consecutive failures, prevents hammering a WAF into a ban.</li>
       <li><strong>Rate limits</strong> from RunContext or per-workflow defaults. Every workflow respects them.</li>
     </ul>
   </section>

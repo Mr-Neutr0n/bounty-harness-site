@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How It Works — BountyHarness</title>
-<meta name="description" content="BountyHarness architecture — thin harness, fat skills, and the six-step hunting loop.">
+<title>How It Works: BountyHarness</title>
+<meta name="description" content="BountyHarness architecture: thin harness, fat skills, and the six step hunting loop.">
 <link rel="stylesheet" href="./style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300FF41'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%23050507'%3E$%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070B18'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%232DD4BF'%3E$%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <header class="site-nav"><div class="shell nav-inner">
@@ -18,12 +18,12 @@
   <section class="section" style="padding-top:48px;">
     <span class="eyebrow">Architecture</span>
     <h1>Thin harness.<br>Fat skills.</h1>
-    <p class="lede">The harness handles context, scope, tools, and execution. Every security workflow lives in a skill package. The agent dispatches, triages, and reports — it never invents a pipeline.</p>
+    <p class="lede">The harness handles context, scope, tools, and execution. Every security workflow lives in a skill package. The agent dispatches, triages, and reports. It never invents a pipeline.</p>
   </section>
 
   <section class="section">
     <div class="terminal">
-      <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="title">architecture — mermaid</span></div>
+      <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="title">architecture: mermaid</span></div>
       <div class="terminal-body">
         <pre style="margin:0;color:var(--text-2);font-size:0.8rem;line-height:1.8;">  bin/bb-init  ──→  RunContext (.bb/context.env + .bb/context.json)
        │
@@ -44,12 +44,12 @@
     <h2>The Six-Step Loop</h2>
     <p>Every engagement follows the same loop, whether run manually or via <code class="inline">bb-hunt</code>:</p>
     <div class="cards" style="grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));">
-      <div class="card"><span class="card-num">01 — UNDERSTAND</span><h3>Target + Scope</h3><p><code class="inline">bb-init</code> writes the RunContext. Scope file defines authorization. No scope, no intrusive.</p></div>
-      <div class="card"><span class="card-num">02 — MODEL</span><h3>Assets + Surfaces</h3><p>Recon enumerates, domain-model classifies archetype, technique-kb maps applicable bug classes.</p></div>
-      <div class="card"><span class="card-num">03 — PLAN</span><h3>Ranked Test Plan</h3><p>Planner generates a prioritized plan from the model. You run what matters, not everything.</p></div>
-      <div class="card"><span class="card-num">04 — EXECUTE</span><h3>Rate-Limited Workflows</h3><p>Skill workflows run with safety-tier gating and circuit-breaker backoff.</p></div>
-      <div class="card"><span class="card-num">05 — VERIFY</span><h3>Impact + PoC</h3><p>Impact-verifier checks preconditions and evidence. Scanner output is not a finding.</p></div>
-      <div class="card"><span class="card-num">06 — REPORT</span><h3>Evidence Pack</h3><p>Reporting assembles request, response, PoC, screenshot, CVSS, and manifest.</p></div>
+      <div class="card"><span class="card-num">01: UNDERSTAND</span><h3>Target + Scope</h3><p><code class="inline">bb-init</code> writes the RunContext. Scope file defines authorization. No scope, no intrusive.</p></div>
+      <div class="card"><span class="card-num">02: MODEL</span><h3>Assets + Surfaces</h3><p>Recon enumerates, domain-model classifies archetype, technique-kb maps applicable bug classes.</p></div>
+      <div class="card"><span class="card-num">03: PLAN</span><h3>Ranked Test Plan</h3><p>Planner generates a prioritized plan from the model. You run what matters, not everything.</p></div>
+      <div class="card"><span class="card-num">04: EXECUTE</span><h3>Rate-Limited Workflows</h3><p>Skill workflows run with safety-tier gating and circuit-breaker backoff.</p></div>
+      <div class="card"><span class="card-num">05: VERIFY</span><h3>Impact + PoC</h3><p>Impact-verifier checks preconditions and evidence. Scanner output is not a finding.</p></div>
+      <div class="card"><span class="card-num">06: REPORT</span><h3>Evidence Pack</h3><p>Reporting assembles request, response, PoC, screenshot, CVSS, and manifest.</p></div>
     </div>
   </section>
 
@@ -83,7 +83,7 @@
 
 </div></main>
 <footer class="site"><div class="shell footer-inner">
-  <span><span style="color:var(--accent)">◆</span> Thin harness, fat skills — the harness is ~200 lines.</span>
+  <span><span style="color:var(--accent)">◆</span> Thin harness, fat skills. The harness is about 200 lines.</span>
   <span><a href="https://github.com/Mr-Neutr0n/bounty-harness">GitHub</a></span>
 </div></footer>
 </body>

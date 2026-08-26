@@ -291,6 +291,10 @@ details.acc .chev { color: var(--text-3); transition: transform 150ms var(--ease
 details.acc[open] .chev { transform: rotate(90deg); color: var(--text-2); }
 details.acc .acc-body { padding: 0 16px 14px; color: var(--text-2); font-family: var(--sans); font-size: 0.85rem; }
 
+/* bento feature grid — asymmetric to avoid equal-3 vibecode tell */
+@media (max-width: 640px) {
+  [style*="grid-column: span"] { grid-column: span 12 !important; }
+}
 /* skill grid */
 .skill-grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
 .skill-card {

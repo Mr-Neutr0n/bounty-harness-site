@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Docs — BountyHarness</title>
-<meta name="description" content="BountyHarness documentation — install, quick start, commands, skills, and workflows.">
+<title>Docs: BountyHarness</title>
+<meta name="description" content="BountyHarness documentation: install, quick start, commands, skills, and workflows.">
 <link rel="stylesheet" href="./style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300FF41'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%23050507'%3E$%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070B18'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%232DD4BF'%3E$%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <a class="skip" href="#main">Skip</a>
@@ -24,18 +24,18 @@
 
   <section class="section">
     <h2>Quick Start</h2>
-    <div class="artifact"><pre><span class="hl-dim"># 1 — Install (30 seconds)</span>
+    <div class="artifact"><pre><span class="hl-dim"># 1: Install (30 seconds)</span>
 <span class="hl-green">curl -fsSL https://raw.githubusercontent.com/Mr-Neutr0n/bounty-harness/main/install.sh | sh</span>
 
-<span class="hl-dim"># 2 — Initialize context for a target</span>
+<span class="hl-dim"># 2: Initialize context for a target</span>
 <span class="hl-green">bb-init example.com --program example --scope-file scope.txt</span>
 
-<span class="hl-dim"># 3 — Run recon</span>
+<span class="hl-dim"># 3: Run recon</span>
 bb-run recon passive-subdomains
 bb-run recon live-discovery
 bb-run recon js-recon
 
-<span class="hl-dim"># 4 — Or go autonomous</span>
+<span class="hl-dim"># 4: Or go autonomous</span>
 <span class="hl-green">bb-hunt https://example.com --time-budget 2h --scope-file scope.txt</span></pre></div>
   </section>
 
@@ -44,7 +44,7 @@ bb-run recon js-recon
     <div class="table-scroll"><table>
       <thead><tr><th>Command</th><th>What it does</th></tr></thead>
       <tbody>
-        <tr><td><code class="inline">bb-init &lt;target&gt;</code></td><td>Creates <code class="inline">.bb/context.env</code> — the RunContext every workflow reads</td></tr>
+        <tr><td><code class="inline">bb-init &lt;target&gt;</code></td><td>Creates <code class="inline">.bb/context.env</code>, the RunContext every workflow reads</td></tr>
         <tr><td><code class="inline">bb-validate</code></td><td>Checks context + scope file + tool registry</td></tr>
         <tr><td><code class="inline">bb-run &lt;skill&gt; &lt;workflow&gt;</code></td><td>Runs one workflow from <code class="inline">.claude/skills/&lt;skill&gt;/skill.yaml</code></td></tr>
         <tr><td><code class="inline">bb-run list</code></td><td>Lists all 46 skills</td></tr>
@@ -59,7 +59,7 @@ bb-run recon js-recon
   <section class="section">
     <h2>Autonomous Campaigns</h2>
     <p><code class="inline">bb-hunt</code> bootstraps its own context and runs unattended:</p>
-    <div class="artifact"><pre><span class="hl-dim"># Passive — safe for any target</span>
+    <div class="artifact"><pre><span class="hl-dim"># Passive: safe for any target</span>
 bb-hunt https://target.com --time-budget 2h
 
 <span class="hl-dim"># Authorized intrusive</span>
@@ -67,18 +67,18 @@ bb-hunt https://target.com --scope-file scope.txt --max-tier intrusive --time-bu
 
 <span class="hl-dim"># Monitor progress</span>
 bb-run campaign status</pre></div>
-    <div class="callout callout-info">Without a scope file, intrusive is auto-capped to <code class="inline">active-safe</code>. The harness enforces this — you cannot accidentally go intrusive.</div>
+    <div class="callout callout-info">Without a scope file, intrusive is auto-capped to <code class="inline">active-safe</code>. The harness enforces this. You cannot accidentally go intrusive.</div>
   </section>
 
   <section class="section">
     <h2>Skill Structure</h2>
     <p>Every skill at <code class="inline">.claude/skills/&lt;skill&gt;/</code> follows the same layout:</p>
     <div class="artifact"><pre>.claude/skills/recon/
-├── SKILL.md          <span class="hl-dim">— human-facing router</span>
-├── skill.yaml        <span class="hl-dim">— executable workflow registry</span>
-├── scripts/          <span class="hl-dim">— command implementations</span>
-├── runbooks/         <span class="hl-dim">— triage & manual guidance</span>
-└── payloads/         <span class="hl-dim">— static payloads & fixtures</span></pre></div>
+├── SKILL.md          <span class="hl-dim">: human facing router</span>
+├── skill.yaml        <span class="hl-dim">: executable workflow registry</span>
+├── scripts/          <span class="hl-dim">: command implementations</span>
+├── runbooks/         <span class="hl-dim">: triage and manual guidance</span>
+└── payloads/         <span class="hl-dim">: static payloads and fixtures</span></pre></div>
     <p>Prefer <code class="inline">bb-run &lt;skill&gt; &lt;workflow&gt;</code> after context init. Need to run manually? Copy the command from <code class="inline">skill.yaml</code>.</p>
   </section>
 
@@ -90,7 +90,7 @@ bb-run campaign status</pre></div>
         <tr><td><span class="chip" style="background:var(--surface-2);">passive</span></td><td>Read-only discovery or local analysis</td></tr>
         <tr><td><span class="chip" style="background:rgba(0,212,255,0.1);color:var(--cyan);border-color:rgba(0,212,255,0.2);">active-safe</span></td><td>Interacts with target but stays read-only</td></tr>
         <tr><td><span class="chip amber">intrusive</span></td><td>Payloads, fuzzing, WAF-triggering</td></tr>
-        <tr><td><span class="chip" style="background:var(--red-dim);color:var(--red);border-color:rgba(255,51,68,0.2);">destructive-manual</span></td><td>Data modification — explicit human approval required</td></tr>
+        <tr><td><span class="chip" style="background:var(--red-dim);color:var(--red);border-color:rgba(255,51,68,0.2);">destructive-manual</span></td><td>Data modification. Explicit human approval required</td></tr>
       </tbody>
     </table></div>
   </section>
@@ -120,7 +120,7 @@ python3 tools/validate_skills.py audit-release  <span class="hl-dim"># release g
 
 </div></main>
 <footer class="site"><div class="shell footer-inner">
-  <span><span style="color:var(--accent)">◆</span> MIT · bb-hunt respects scope — no scope file, no intrusive.</span>
+  <span><span style="color:var(--accent)">◆</span> MIT · bb-hunt respects scope. No scope file, no intrusive.</span>
   <span><a href="https://github.com/Mr-Neutr0n/bounty-harness">GitHub</a></span>
 </div></footer>
 </body>

@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BountyHarness — autonomous bug bounty agent harness</title>
+<title>BountyHarness: autonomous bug bounty agent harness</title>
 <meta name="description" content="46 skill packages. Safety tiers. Evidence-backed findings. BountyHarness is the open-source agent harness for authorized bug bounty hunting.">
-<meta name="theme-color" content="#00FF41">
+<meta name="theme-color" content="#070B18">
 <link rel="stylesheet" href="./style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300FF41'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%23050507'%3E$%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070B18'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%232DD4BF'%3E$%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -38,7 +38,7 @@
     <div>
       <span class="eyebrow">Authorized testing only · MIT licensed · No telemetry</span>
       <h1>Your agent doesn't<br>guess. It <span class="accent-text">hunts.</span></h1>
-      <p class="lede">46 skill packages. 4 safety tiers. Evidence or it didn't happen. BountyHarness gives your AI agent a disciplined operating model for bug bounty — from recon to report, with receipts.</p>
+      <p class="lede">46 skill packages. 4 safety tiers. Evidence or it didn't happen. BountyHarness gives your AI agent a disciplined operating model for bug bounty, from recon to report, with receipts.</p>
       <div class="hero-actions">
         <div class="command-bar" style="flex:1;max-width:420px;">
           <span class="prompt">$</span>
@@ -55,14 +55,14 @@
       </div>
     </div>
     <div class="terminal">
-      <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="title">bounty-harness — zsh</span></div>
+      <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="title">bounty-harness: zsh</span></div>
       <div class="terminal-body">
         <div class="line"><span class="prompt">$</span><span class="cmd"> bb-hunt https://target.com --time-budget 2h</span></div>
         <div class="line"><span class="dim">[recon]  847 subdomains → 23 live hosts</span></div>
         <div class="line"><span class="dim">[model]  fintech/api archetype · 12 surfaces</span></div>
-        <div class="line"><span class="dim">[plan]   18 techniques ranked — XSS P1, IDOR P1, SSRF P2</span></div>
-        <div class="line"><span class="success">  [xss]    reflected ✓ — evidence/xss-01/</span></div>
-        <div class="line"><span class="success">  [api]    BOLA ✓ — evidence/api-03/</span></div>
+        <div class="line"><span class="dim">[plan]   18 techniques ranked: XSS P1, IDOR P1, SSRF P2</span></div>
+        <div class="line"><span class="success">  [xss]    reflected ✓: evidence/xss-01/</span></div>
+        <div class="line"><span class="success">  [api]    BOLA ✓: evidence/api-03/</span></div>
         <div class="line"><span class="dim">  [sqli]   no findings (verified clean)</span></div>
         <div class="line"><span class="prompt">$</span><span class="cmd"> bb-run reporting batch-generate</span></div>
         <div class="line"><span class="success">  report ready → evidence/ready/report.md</span></div>
@@ -86,13 +86,13 @@
 <div class="shell"><section class="section">
   <span class="eyebrow">Why BountyHarness</span>
   <h2 style="margin-bottom:24px;">One harness. Every bug class.</h2>
-  <div class="cards">
-    <article class="card neon-hover"><div class="card-icon">◈</div><h3>Fat skills, thin harness</h3><p>46 skills hold the real logic — scripts, payloads, runbooks, evidence rules. The harness just dispatches. Add a bug class without touching core.</p></article>
-    <article class="card neon-hover"><div class="card-icon">⬡</div><h3>Autonomous campaigns</h3><p><code class="inline">bb-hunt target.com</code> bootstraps context, runs recon → plan → execute → report from one URL. Bounded by time budget, resumable, scope-gated.</p></article>
-    <article class="card neon-hover"><div class="card-icon">⬢</div><h3>Evidence or it didn't happen</h3><p>Every finding needs request, response, PoC, and impact proof. Scanner output is never a report. Impact-verifier gates what gets submitted.</p></article>
-    <article class="card"><div class="card-icon">⬣</div><h3>Safety tiers that actually gate</h3><p>Passive, active-safe, intrusive, destructive-manual. Intrusive auto-caps to active-safe without a scope file. Circuit breaker kills runaway targets.</p></article>
-    <article class="card"><div class="card-icon">⬔</div><h3>Tool registry, not install hell</h3><p>99 tools mapped by capability and risk tier. <code class="inline">bb-tools doctor</code> checks health. <code class="inline">bb-tools install --profile recon</code> just works.</p></article>
-    <article class="card"><div class="card-icon">⬕</div><h3>Knowledge that compounds</h3><p>Program memory, asset graphs, traffic corpus, technique KB. Each engagement makes the next one sharper — without leaking secrets.</p></article>
+  <div style="display:grid;gap:14px;grid-template-columns:repeat(12,1fr);">
+    <article class="card" style="grid-column: span 7;"><div class="card-icon">◈</div><h3>Fat skills, thin harness</h3><p>46 skills hold the real logic: scripts, payloads, runbooks, evidence rules, and reporting guidance. The harness is 261 lines. Add a bug class without touching core. <a href="./skills.html" style="font-size:0.8rem;">Browse all 46 →</a></p></article>
+    <article class="card" style="grid-column: span 5;"><div class="card-icon">⬡</div><h3>Autonomous campaigns</h3><p><code class="inline">bb-hunt target.com</code> from one URL, bounded by time budget, resumable.</p></article>
+    <article class="card" style="grid-column: span 4;"><div class="card-icon">⬢</div><h3>Evidence or it didn't happen</h3><p>Every finding needs request, response, PoC, and impact proof. Scanner output is never a report.</p></article>
+    <article class="card" style="grid-column: span 4;"><div class="card-icon">⬣</div><h3>Safety tiers that gate</h3><p>Intrusive auto-caps to active-safe without a scope file. Circuit breaker kills runaways.</p></article>
+    <article class="card" style="grid-column: span 4;"><div class="card-icon">⬔</div><h3>Tool registry</h3><p>99 tools by capability and risk tier. <code class="inline">bb-tools doctor</code> checks health.</p></article>
+    <article class="card" style="grid-column: span 12;display:flex;gap:20px;align-items:center;flex-wrap:wrap;"><div class="card-icon" style="margin-bottom:0;">⬕</div><div><h3 style="margin:0;">Knowledge that compounds</h3><p style="margin:4px 0 0;">Program memory, asset graphs, traffic corpus, technique KB. Each engagement makes the next sharper.</p></div></article>
   </div>
 </section></div>
 
@@ -115,7 +115,7 @@
 <div class="shell"><section class="section" style="text-align:center;padding-bottom:64px;">
   <h2 style="margin-bottom:12px;">Ready to hunt?</h2>
   <p style="max-width:50ch;margin:0 auto 20px;color:var(--text-2);">Install in 30 seconds. Works on macOS and Linux. No account, no telemetry, no BS.</p>
-  <a class="btn btn-primary" href="./install.html">Get started — install in 30s</a>
+  <a class="btn btn-primary" href="./install.html">Get started: install in 30s</a>
   <p class="small" style="margin-top:12px;">Requires Python 3.11+ · Git · Works from any directory</p>
 </section></div>
 

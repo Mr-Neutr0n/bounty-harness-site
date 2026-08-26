@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Install — BountyHarness</title>
+<title>Install: BountyHarness</title>
 <meta name="description" content="Install BountyHarness via curl installer or Homebrew.">
 <link rel="stylesheet" href="./style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300FF41'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%23050507'%3E$%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070B18'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%232DD4BF'%3E$%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <header class="site-nav"><div class="shell nav-inner">
@@ -32,7 +32,7 @@
     <h2>Install options</h2>
     <div class="artifact"><pre>INSTALL_DIR=~/tools/bounty-harness ./install.sh   <span class="hl-dim"># custom location</span>
 ./install.sh                                      <span class="hl-dim"># into current dir if empty</span>
-<span class="hl-dim"># pipe form — POSIX sh compatible</span>
+<span class="hl-dim"># pipe form: POSIX sh compatible</span>
 curl -fsSL .../install.sh | sh -s -- --help</pre></div>
     <p>The installer verifies dependencies and prints exact fix commands for anything missing, clones or pulls the repo, smoke-tests it (46 skills), and symlinks the five binaries into <code class="inline">~/.local/bin</code> (or <code class="inline">/usr/local/bin</code>).</p>
   </section>
@@ -40,7 +40,7 @@ curl -fsSL .../install.sh | sh -s -- --help</pre></div>
   <section class="section">
     <h2>Homebrew</h2>
     <div class="command-bar"><span class="prompt">$</span><code id="c2">brew install Mr-Neutr0n/bounty-harness/bounty-harness</code><button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('c2').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
-    <p style="margin-top:12px;">Formula at <code class="inline">packaging/homebrew/bounty-harness.rb</code>. Releases are cut by pushing a <code class="inline">v*</code> tag — CI builds the archive and its sha256.</p>
+    <p style="margin-top:12px;">Formula at <code class="inline">packaging/homebrew/bounty-harness.rb</code>. Releases are cut by pushing a <code class="inline">v*</code> tag. CI builds the archive and its sha256.</p>
   </section>
 
   <section class="section">
@@ -51,7 +51,7 @@ curl -fsSL .../install.sh | sh -s -- --help</pre></div>
         <tr><td>python3</td><td>≥ 3.11</td><td><code class="inline">brew install python@3.12</code></td></tr>
         <tr><td>PyYAML</td><td>any</td><td><code class="inline">python3 -m pip install pyyaml</code></td></tr>
         <tr><td>git</td><td>any</td><td><code class="inline">brew install git</code></td></tr>
-        <tr><td>gitleaks <span style="color:var(--text-3)">(optional)</span></td><td>any</td><td><code class="inline">brew install gitleaks</code> — for <code class="inline">make secrets</code></td></tr>
+        <tr><td>gitleaks <span style="color:var(--text-3)">(optional)</span></td><td>any</td><td><code class="inline">brew install gitleaks</code>, for <code class="inline">make secrets</code></td></tr>
       </tbody>
     </table></div>
   </section>
