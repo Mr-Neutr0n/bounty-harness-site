@@ -353,6 +353,4 @@ footer.site a:hover { color: var(--text); }
 ::-webkit-scrollbar-track { background: var(--void); }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 
-/* hero terminal command bar: prevent mid-word breaks */
-.command-bar code { word-break: break-all; }
 @media (max-width: 500px) { .command-bar { flex-wrap: wrap; } }
