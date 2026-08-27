@@ -1,4 +1,4 @@
-# BountyHarness Site — Design System
+# BountyHarness Site - Design System
 
 Locked 2026-08-26. One aesthetic, enforced everywhere. If a change contradicts this file, the file wins.
 
@@ -63,5 +63,5 @@ Specific, measured, operator-grade. No "effortlessly," "seamlessly," "unlock," "
 - [ ] No bg-gradient-to-r from-blue-600
 - [ ] No 3-dot terminal mockup without real content (ours shows real bb-hunt output)
 - [ ] No Inter as sole face
-- [ ] No em dashes (—) in copy
+- [ ] No em dashes in copy
 - [ ] No green favicon (void bg, accent glyph)

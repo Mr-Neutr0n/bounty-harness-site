@@ -1,4 +1,4 @@
-/* BountyHarness — Kritt-grade hacker
+/* BountyHarness - Kritt-grade hacker
    Deep ink navy, restrained teal accent, quiet surfaces.
    Kritt craft applied to dark ops: pill CTAs, orbed hero, tracked display,
    generous section rhythm. Mono only for code/traces; sans for everything else. */
@@ -44,7 +44,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* subtle grid texture — Aurva-level restraint */
+/* subtle grid texture - Aurva-level restraint */
 body::before {
   content: "";
   position: fixed; inset: 0;
@@ -165,6 +165,12 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 .hero .lede { margin-bottom: 24px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 12px; }
 .trust-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.hero-install {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: center;
+  margin-top: 34px; padding-top: 18px; border-top: 1px solid var(--border);
+}
+.hero-install-label { display: flex; flex-direction: column; gap: 2px; min-width: 104px; font-family: var(--mono); font-size: 0.63rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.hero-install-label .eyebrow { margin: 0; font-size: 0.63rem; }
 
 /* terminal window */
 .terminal {
@@ -202,7 +208,8 @@ a:hover { color: var(--accent); text-decoration-color: var(--accent); }
   overflow: hidden;
 }
 .command-bar .prompt { color: var(--text-3); }
-.command-bar code { flex: 1; color: var(--text); background: none; border: 0; padding: 0; font-size: 0.75rem; overflow-wrap: break-word; word-break: break-word; min-width: 0; }
+.command-bar code { flex: 1; display: block; color: var(--text); background: none; border: 0; padding: 0; font-size: 0.75rem; white-space: nowrap; overflow-x: auto; overflow-y: hidden; overflow-wrap: normal; word-break: normal; min-width: 0; scrollbar-width: none; }
+.command-bar code::-webkit-scrollbar { display: none; }
 .copy-btn {
   display: inline-flex; align-items: center; gap: 5px;
   background: var(--surface-2); color: var(--text-3);
@@ -297,7 +304,7 @@ details.acc .chev { color: var(--text-3); transition: transform 150ms var(--ease
 details.acc[open] .chev { transform: rotate(90deg); color: var(--text-2); }
 details.acc .acc-body { padding: 0 16px 14px; color: var(--text-2); font-family: var(--sans); font-size: 0.85rem; }
 
-/* bento feature grid — asymmetric to avoid equal-3 vibecode tell */
+/* bento feature grid - asymmetric to avoid equal-3 vibecode tell */
 @media (max-width: 640px) {
   [style*="grid-column: span"] { grid-column: span 12 !important; }
 }
@@ -352,4 +359,7 @@ footer.site a:hover { color: var(--text); }
 ::-webkit-scrollbar-track { background: var(--void); }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 3px; }
 
-@media (max-width: 500px) { .command-bar { flex-wrap: wrap; } }
+@media (max-width: 640px) {
+  .hero-install { grid-template-columns: 1fr; gap: 8px; margin-top: 28px; }
+  .hero-install-label { flex-direction: row; align-items: center; justify-content: space-between; }
+}

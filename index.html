@@ -40,11 +40,7 @@
       <h1>Your agent doesn't<br>guess. It <span class="accent-text">hunts.</span></h1>
       <p class="lede">46 skill packages. 4 safety tiers. Evidence or it didn't happen. BountyHarness gives your AI agent a disciplined operating model for bug bounty, from recon to report, with receipts.</p>
       <div class="hero-actions">
-        <div class="command-bar" style="flex:1;max-width:520px;">
-          <span class="prompt">$</span>
-          <code id="install-cmd">curl -fsSL https://raw.githubusercontent.com/Mr-Neutr0n/bounty-harness/main/install.sh | sh</code>
-          <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button>
-        </div>
+        <a class="btn btn-primary" href="./install.html">Install BountyHarness <span class="arrow">→</span></a>
         <a class="btn btn-ghost" href="./docs.html">Read the docs →</a>
       </div>
       <div class="trust-row">
@@ -68,6 +64,14 @@
         <div class="line"><span class="success">  report ready → evidence/ready/report.md</span></div>
         <div class="line"><span class="prompt">$</span><span class="cmd" style="color:var(--accent)"> █</span></div>
       </div>
+    </div>
+  </div>
+  <div class="hero-install">
+    <div class="hero-install-label"><span class="eyebrow">Quick install</span><span>macOS · Linux</span></div>
+    <div class="command-bar">
+      <span class="prompt">$</span>
+      <code id="install-cmd">curl -fsSL https://raw.githubusercontent.com/Mr-Neutr0n/bounty-harness/main/install.sh | sh</code>
+      <button class="copy-btn" type="button" onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button>
     </div>
   </div>
 </div></section>
