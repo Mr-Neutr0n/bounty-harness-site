@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "bounty-harness-site",
   "buildCommand": null,
   "outputDirectory": ".",
   "cleanUrls": true,
