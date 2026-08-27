@@ -1,67 +1,49 @@
-# BountyHarness Site - Design System
+# BountyHarness Site - Design Direction
 
-Locked 2026-08-26. One aesthetic, enforced everywhere. If a change contradicts this file, the file wins.
+Updated 2026-08-27 after reviewing the deployed site and aurva.ai. This is a direction for a serious open-source security operations tool, not a startup landing-page template.
 
-## Brand
-Operator equipment, not SaaS marketing. Dark, precise, evidence-disciplined. Audience lives in terminals and editors at 2am. The site must feel like it was built by someone who runs bounty loops, not someone who prompted "dark hacker site with green neon."
+## Position
 
-## Color (3 hues max, 60/30/10)
+BountyHarness is an execution and evidence system for authorized AI-assisted security research. The homepage must explain the control loop: initialize scope, select registered workflows, gate execution, record traces, verify impact, and package evidence.
 
-| Token | Hex | Use | Forbidden |
-|-------|-----|-----|-----------|
-| `--void` | `#070B18` | Page background | Never pure `#000` |
-| `--bg` | `#0A1220` | Section wash |  |
-| `--surface` | `#0F1D32` | Cards, nav |  |
-| `--surface-2` | `#162845` | Hover, table header |  |
-| `--border` | `#1C3352` | Hairline 1px only | Never `border-slate-200` flat gray |
-| `--ink` | `#E8EEF6` | Headings, primary text | Never pure `#FFF` |
-| `--text-2` | `#8A9AB8` | Body, lede |  |
-| `--accent` | `#2DD4BF` | Active nav, one stat per viewport, copy success | Max once per viewport. Never `from-blue-600 to-indigo-700` |
-| `--amber` | `#F59E0B` | Warn callouts only |  |
-| `--red` | `#F43F5E` | Danger callouts only |  |
+The audience is a researcher or engineer who can read a shell command and a directory tree. Show the system they are getting. Do not sell an abstract agent or claim outcomes the repository cannot prove.
 
-Neutrals derived from void hue via HSL. No hue 200-290 as primary. No pure `#fff`/`#000`. No Tailwind blue-* defaults. Flat color, no gradients.
+## Reference Review
 
-## Typography
+Aurva's quality comes from information design, not from a dark background. Its homepage uses a quiet editorial shell, a real runtime map as the hero artifact, thin rules, figure labels, sparse color, and dense but legible inventories. Each section answers a concrete operational question.
 
-| Role | Family | Size / Leading | Weight | Tracking |
-|------|--------|----------------|--------|----------|
-| Display H1 | Geist Sans, system-ui | clamp 2rem-3rem / 1.05 | 800 | -0.04em |
-| H2 section | Geist Sans | 1.75rem / 1.1 | 700 | -0.03em |
-| Body | Geist Sans | 15px / 1.65 | 400 | 0 |
-| Code / stats | JetBrains Mono | 13px / 1.6 | 400 | 0 |
-| Eyebrow | JetBrains Mono caps | 0.68rem | 600 | 0.1em |
+The previous BountyHarness page failed this test. It used a canonical badge, oversized slogan, two-button hero, pill chips, rounded icon cards, decorative orbs, and a terminal mockup in place of the architecture. Its copy also leaned on generic phrases such as "Your agent doesn't guess" and "One harness. Every bug class." Those patterns are removed.
 
-One display (Geist Sans) + one mono (JetBrains Mono). No third face. `text-wrap: balance` on H1, `pretty` on body. Body max 60ch.
+## Homepage Structure
 
-## Spacing & Layout
+1. A compact masthead with a typeset BountyHarness wordmark and a small source/install action.
+2. A factual hero: category statement, precise description, install command, and four verified repository facts.
+3. A large system figure showing `target + scope` through `recon`, `domain-model`, `planner`, skill execution, `impact-verifier`, and reporting. Show the tool registry, safety tiers, circuit breaker, traces, and local evidence as connected control surfaces.
+4. A ledger of what the harness controls: context, workflow selection, governance, and evidence.
+5. A real command/output specimen that supports the diagram without becoming the hero.
+6. A safety and evidence section with explicit tier behavior and artifact paths.
+7. A restrained install and source footer.
 
-- 8pt grid. Section padding: hero 56, features 64, CTA 48. Never uniform `py-20` everywhere.
-- Card radius 10px, button 7px, code block 8px, pill 20px. Not `rounded-2xl` everywhere. Two radii that disagree.
-- Bento: 4-col grid where used, hero cell 2x width. Otherwise 5fr/3fr asymmetric proof layout.
-- Elevation: surface steps (#070B18 → #0F1D32 → #162845) + 1px hairline. No `shadow-md` pile-up.
+## Visual System
 
-## Components
+- Near-black field, warm white text, cool gray secondary text, and one muted green accent used for active state and selected flow only.
+- No gradients, blurred orbs, glow effects, decorative glyphs, emoji, or stock imagery.
+- Thin 1px rules carry structure. Corners are square or lightly eased at 2px to 6px. No pill-shaped UI except where a real status needs it.
+- Use a sans display face for hierarchy and a mono face for labels, commands, paths, counts, and evidence. The wordmark is typeset in HTML/CSS, with a compact `BH` mark and differentiated weights for `Bounty` and `Harness`.
+- Use figure numbers, section codes, field labels, and small units to create information density. Whitespace separates systems instead of rounded containers.
+- The architecture diagram is the primary visual. HTML/CSS nodes and rules must remain readable and collapse into a vertical flow on mobile.
 
-- **Nav**: sticky, blur(20px), hairline border. Active page: subtle surface-2 bg, not glow.
-- **Buttons**: Primary is ink-on-void (white on dark), not accent fill. Ghost is transparent + border. No gradient, no scale-105.
-- **Cards**: borderless first (whitespace + surface lift). 1px hairline only if needed. No colored left strip.
-- **Terminal**: Deep code-bg `#060A14`, chrome bar with traffic lights, mono 0.78rem. Copy button is surface-2, not accent.
-- **Motion**: color 150ms, transform 400ms, separate. Every transition honors `prefers-reduced-motion`.
+## Content Rules
 
-## Voice
+- Use facts from the repository: 46 skill packages, 99 registered tools, four safety tiers, MIT license, local-only evidence, and macOS/Linux support.
+- Use the real commands `bb-init`, `bb-validate`, `bb-run`, `bb-hunt`, `bb-tools`, and reporting workflows.
+- State authorization and scope requirements plainly. Never imply that automation creates valid findings without impact verification.
+- Avoid AI-startup language, empty superlatives, slogans, customer claims, performance claims, and repetitive "one X / every Y" constructions.
+- Never use em dashes in site copy.
 
-Specific, measured, operator-grade. No "effortlessly," "seamlessly," "unlock," "AI-powered," "supercharge." Headlines must fail the cover-logo test (swap logo, still makes sense? Rewrite). One sentence carries pitch: category + audience + outcome.
+## Responsive Rules
 
-## Anti-Patterns (lint before ship)
-
-- [ ] No hue 200-290 primary
-- [ ] No pure #fff/#000
-- [ ] No grid-cols-3 equal feature row (use asymmetric)
-- [ ] No badge+H1+subhead+2 buttons canonical hero without variation
-- [ ] No rounded-2xl on every card
-- [ ] No bg-gradient-to-r from-blue-600
-- [ ] No 3-dot terminal mockup without real content (ours shows real bb-hunt output)
-- [ ] No Inter as sole face
-- [ ] No em dashes in copy
-- [ ] No green favicon (void bg, accent glyph)
+- Desktop uses a wide editorial frame with an asymmetric text and system-map hero.
+- Mobile keeps the same order and hierarchy, turns the map into a readable vertical sequence, and allows only inner code specimens to scroll horizontally.
+- The document itself must never create horizontal overflow.
+- Every interactive control needs visible focus, a meaningful label, and a usable touch target.

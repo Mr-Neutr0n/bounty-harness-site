@@ -8,11 +8,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070B18'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%232DD4BF'%3E$%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<header class="site-nav"><div class="shell nav-inner">
-  <a class="brand" href="./index.html"><span class="brand-mark">$</span> BountyHarness</a>
-  <nav class="nav-links"><a href="./how-it-works.html">How it works</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></nav>
-  <nav class="nav-mobile"><details><summary aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></summary><div class="menu-panel"><a href="./how-it-works.html">How it works</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></div></details></nav>
-  <span class="nav-cta"><a class="btn btn-primary btn-sm" href="./install.html" aria-current="page">Install</a></span>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav"><div class="nav-inner">
+  <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">BH</span><span class="brand-name"><strong>Bounty</strong><span>Harness</span></span><span class="brand-version">v3.1</span></a>
+  <nav class="nav-links" aria-label="Primary navigation"><a href="./how-it-works.html">Architecture</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></nav>
+  <nav class="nav-mobile" aria-label="Menu"><details><summary aria-label="Open menu"><span>Menu</span><span class="menu-lines" aria-hidden="true">==</span></summary><div class="menu-panel"><a href="./how-it-works.html">Architecture</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></div></details></nav>
+  <div class="nav-end"><a class="nav-source" href="https://github.com/Mr-Neutr0n/bounty-harness">Source</a><a class="btn btn-primary btn-sm" href="./install.html" aria-current="page">Install</a></div>
 </div></header>
 <main id="main"><div class="shell narrow">
   <section class="section" style="padding-top:48px;">
@@ -24,7 +25,7 @@
   <section class="section">
     <h2>curl installer</h2>
     <p>Works on any machine with <code class="inline">curl</code>, <code class="inline">git</code>, and <code class="inline">python3 >= 3.11</code>:</p>
-    <div class="command-bar"><span class="prompt">$</span><code id="c1">curl -fsSL https://raw.githubusercontent.com/Mr-Neutr0n/bounty-harness/main/install.sh | sh</code><button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('c1').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
+    <div class="command-bar"><span class="prompt">$</span><code id="c1">curl -fsSL https://raw.githubusercontent.com/Mr-Neutr0n/bounty-harness/main/install.sh | sh -s --</code><button class="copy-btn" type="button" aria-label="Copy curl install command" onclick="navigator.clipboard.writeText(document.getElementById('c1').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
     <p style="margin-top:12px;font-size:0.85rem;color:var(--text-3);">Prefer to inspect first? <code class="inline">curl -fsSL .../install.sh -o install.sh && less install.sh && sh install.sh</code></p>
   </section>
 
@@ -39,7 +40,7 @@ curl -fsSL .../install.sh | sh -s -- --help</pre></div>
 
   <section class="section">
     <h2>Homebrew</h2>
-    <div class="command-bar"><span class="prompt">$</span><code id="c2">brew install Mr-Neutr0n/bounty-harness/bounty-harness</code><button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('c2').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
+    <div class="command-bar"><span class="prompt">$</span><code id="c2">brew install Mr-Neutr0n/bounty-harness/bounty-harness</code><button class="copy-btn" type="button" aria-label="Copy Homebrew install command" onclick="navigator.clipboard.writeText(document.getElementById('c2').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
     <p style="margin-top:12px;">Formula at <code class="inline">packaging/homebrew/bounty-harness.rb</code>. Releases are cut by pushing a <code class="inline">v*</code> tag. CI builds the archive and its sha256.</p>
   </section>
 

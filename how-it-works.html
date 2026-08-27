@@ -8,17 +8,18 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070B18'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%232DD4BF'%3E$%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<header class="site-nav"><div class="shell nav-inner">
-  <a class="brand" href="./index.html"><span class="brand-mark">$</span> BountyHarness</a>
-  <nav class="nav-links"><a href="./how-it-works.html" aria-current="page">How it works</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></nav>
-  <nav class="nav-mobile"><details><summary aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></summary><div class="menu-panel"><a href="./how-it-works.html" aria-current="page">How it works</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></div></details></nav>
-  <span class="nav-cta"><a class="btn btn-primary btn-sm" href="./install.html">Install</a></span>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-nav"><div class="nav-inner">
+  <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">BH</span><span class="brand-name"><strong>Bounty</strong><span>Harness</span></span><span class="brand-version">v3.1</span></a>
+  <nav class="nav-links" aria-label="Primary navigation"><a href="./how-it-works.html" aria-current="page">Architecture</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></nav>
+  <nav class="nav-mobile" aria-label="Menu"><details><summary aria-label="Open menu"><span>Menu</span><span class="menu-lines" aria-hidden="true">==</span></summary><div class="menu-panel"><a href="./how-it-works.html" aria-current="page">Architecture</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a></div></details></nav>
+  <div class="nav-end"><a class="nav-source" href="https://github.com/Mr-Neutr0n/bounty-harness">Source</a><a class="btn btn-primary btn-sm" href="./install.html">Install</a></div>
 </div></header>
 <main id="main"><div class="shell">
   <section class="section" style="padding-top:48px;">
     <span class="eyebrow">Architecture</span>
-    <h1>Thin harness.<br>Fat skills.</h1>
-    <p class="lede">The harness handles context, scope, tools, and execution. Every security workflow lives in a skill package. The agent dispatches, triages, and reports. It never invents a pipeline.</p>
+    <h1>How execution moves<br>from scope to evidence.</h1>
+    <p class="lede">The harness handles context, scope, tools, and execution. Security workflows live in inspectable skill packages. The agent dispatches, triages, and reports through the same controlled path.</p>
   </section>
 
   <section class="section">
@@ -41,7 +42,7 @@
   </section>
 
   <section class="section">
-    <h2>The Six-Step Loop</h2>
+    <h2>The execution path</h2>
     <p>Every engagement follows the same loop, whether run manually or via <code class="inline">bb-hunt</code>:</p>
     <div class="cards" style="grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));">
       <div class="card"><span class="card-num">01: UNDERSTAND</span><h3>Target + Scope</h3><p><code class="inline">bb-init</code> writes the RunContext. Scope file defines authorization. No scope, no intrusive.</p></div>
@@ -83,7 +84,7 @@
 
 </div></main>
 <footer class="site"><div class="shell footer-inner">
-  <span><span style="color:var(--accent)">◆</span> Thin harness, fat skills. The harness is about 200 lines.</span>
+  <span>Thin harness / fat skills.</span>
   <span><a href="https://github.com/Mr-Neutr0n/bounty-harness">GitHub</a></span>
 </div></footer>
 </body>

@@ -3,130 +3,206 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BountyHarness: autonomous bug bounty agent harness</title>
-<meta name="description" content="46 skill packages. Safety tiers. Evidence-backed findings. BountyHarness is the open-source agent harness for authorized bug bounty hunting.">
-<meta name="theme-color" content="#070B18">
+<title>BountyHarness: execution and evidence for AI-assisted security research</title>
+<meta name="description" content="BountyHarness is an open-source execution and evidence system for authorized AI-assisted security research.">
+<meta name="theme-color" content="#0B0C0B">
 <link rel="stylesheet" href="./style.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23070B18'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='16' font-weight='800' fill='%232DD4BF'%3E$%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%230B0C0B'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='11' font-weight='700' fill='%23E4E6DE'%3EBH%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-nav"><div class="shell nav-inner">
-  <a class="brand" href="./index.html" aria-current="page">
-    <span class="brand-mark">$</span>
-    BountyHarness <span style="color:var(--accent);font-size:0.7rem;letter-spacing:0.08em;">v3.1</span>
-  </a>
-  <nav class="nav-links" aria-label="Pages">
-    <a href="./how-it-works.html">How it works</a>
-    <a href="./skills.html">Skills</a>
-    <a href="./docs.html">Docs</a>
-    <a href="./security.html">Security</a>
-    <a href="./compare.html">Compare</a>
-    <a href="./faq.html">FAQ</a>
-  </nav>
-  <nav class="nav-mobile" aria-label="Menu"><details><summary aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></summary>
-    <div class="menu-panel"><a href="./how-it-works.html">How it works</a><a href="./skills.html">Skills</a><a href="./docs.html">Docs</a><a href="./security.html">Security</a><a href="./compare.html">Compare</a><a href="./faq.html">FAQ</a><a href="./install.html">Install →</a></div>
-  </details></nav>
-  <span class="nav-cta"><a class="btn btn-primary btn-sm" href="./install.html">Install</a></span>
-</div></header>
 
-<main id="main">
-
-<!-- HERO -->
-<section class="hero"><div class="hero-orb hero-orb-1" aria-hidden="true"></div><div class="hero-orb hero-orb-2" aria-hidden="true"></div><div class="shell" style="position:relative;z-index:1;">
-  <div class="hero-grid">
-    <div>
-      <span class="eyebrow">Authorized testing only · MIT licensed · No telemetry</span>
-      <h1>Your agent doesn't<br>guess. It <span class="accent-text">hunts.</span></h1>
-      <p class="lede">46 skill packages. 4 safety tiers. Evidence or it didn't happen. BountyHarness gives your AI agent a disciplined operating model for bug bounty, from recon to report, with receipts.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="./install.html">Install BountyHarness <span class="arrow">→</span></a>
-        <a class="btn btn-ghost" href="./docs.html">Read the docs →</a>
-      </div>
-      <div class="trust-row">
-        <span class="chip neon">◆ MIT license</span>
-        <span class="chip">◆ 99 tools registered</span>
-        <span class="chip">◆ Works on VPS + Mac</span>
-        <span class="chip amber">◆ Scope-gated by default</span>
-      </div>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="brand" href="./index.html" aria-current="page">
+      <span class="brand-mark" aria-hidden="true">BH</span>
+      <span class="brand-name"><strong>Bounty</strong><span>Harness</span></span>
+      <span class="brand-version">v3.1</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="./how-it-works.html">Architecture</a>
+      <a href="./skills.html">Skills</a>
+      <a href="./docs.html">Docs</a>
+      <a href="./security.html">Security</a>
+    </nav>
+    <div class="nav-end">
+      <a class="nav-source" href="https://github.com/Mr-Neutr0n/bounty-harness">Source</a>
+      <a class="btn btn-primary btn-sm" href="./install.html">Install</a>
     </div>
-    <div class="terminal">
-      <div class="terminal-bar"><span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span><span class="title">bounty-harness: zsh</span></div>
-      <div class="terminal-body">
-        <div class="line"><span class="prompt">$</span><span class="cmd"> bb-hunt https://target.com --time-budget 2h</span></div>
-        <div class="line"><span class="dim">[recon]  847 subdomains → 23 live hosts</span></div>
-        <div class="line"><span class="dim">[model]  fintech/api archetype · 12 surfaces</span></div>
-        <div class="line"><span class="dim">[plan]   18 techniques ranked: XSS P1, IDOR P1, SSRF P2</span></div>
-        <div class="line"><span class="success">  [xss]    reflected ✓: evidence/xss-01/</span></div>
-        <div class="line"><span class="success">  [api]    BOLA ✓: evidence/api-03/</span></div>
-        <div class="line"><span class="dim">  [sqli]   no findings (verified clean)</span></div>
-        <div class="line"><span class="prompt">$</span><span class="cmd"> bb-run reporting batch-generate</span></div>
-        <div class="line"><span class="success">  report ready → evidence/ready/report.md</span></div>
-        <div class="line"><span class="prompt">$</span><span class="cmd" style="color:var(--accent)"> █</span></div>
+    <nav class="nav-mobile" aria-label="Menu">
+      <details>
+        <summary aria-label="Open menu"><span>Menu</span><span class="menu-lines" aria-hidden="true">==</span></summary>
+        <div class="menu-panel">
+          <a href="./how-it-works.html">Architecture</a>
+          <a href="./skills.html">Skills</a>
+          <a href="./docs.html">Docs</a>
+          <a href="./security.html">Security</a>
+          <a href="./compare.html">Compare</a>
+          <a href="./faq.html">FAQ</a>
+          <a href="https://github.com/Mr-Neutr0n/bounty-harness">Source</a>
+          <a href="./install.html">Install</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="home-main">
+  <div class="home-frame">
+    <section class="home-hero">
+      <div class="home-shell">
+        <div class="hero-topline"><span>01 / OPERATING MODEL</span><span>OPEN SOURCE / AUTHORIZED TESTING</span></div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="hero-label">BOUNTYHARNESS / EXECUTION + EVIDENCE</p>
+            <h1>Execution and<br><em>evidence</em> for<br>security research.</h1>
+            <p class="lede">BountyHarness is an execution and evidence system for authorized AI-assisted security research. It initializes scope, dispatches registered workflows, enforces safety tiers, preserves run traces, verifies impact, and leaves a reportable evidence set on disk.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="./install.html">Install <span aria-hidden="true">-&gt;</span></a>
+              <a class="text-link" href="https://github.com/Mr-Neutr0n/bounty-harness">Read the source <span aria-hidden="true">-&gt;</span></a>
+            </div>
+            <p class="hero-note">MIT licensed / local-only evidence / macOS + Linux</p>
+          </div>
+
+          <figure class="architecture-figure" aria-labelledby="architecture-caption">
+            <figcaption id="architecture-caption"><span>FIG. 01</span><span>CAMPAIGN CONTROL FLOW</span><span class="fig-status">LOCAL / TRACEABLE</span></figcaption>
+            <div class="system-map" role="img" aria-label="BountyHarness flow from target and scope through recon, domain model, planner, skill execution, impact verification, and report, with tools, safety, traces, and local evidence controls.">
+              <div class="map-intake">
+                <div class="map-node map-input"><span class="node-kicker">INPUT 01</span><strong>TARGET</strong><code>example.com</code></div>
+                <span class="map-link" aria-hidden="true">-&gt;</span>
+                <div class="map-node map-input"><span class="node-kicker">INPUT 02</span><strong>SCOPE</strong><code>scope.txt</code></div>
+                <span class="map-link" aria-hidden="true">-&gt;</span>
+                <div class="map-node map-context"><span class="node-kicker">CONTEXT</span><strong>RunContext</strong><code>.bb/context.env</code></div>
+              </div>
+              <div class="map-rule-label"><span>EXECUTION PATH</span><span>bb-hunt / bounded by time budget</span></div>
+              <div class="map-flow">
+                <div class="map-step"><span>01</span><strong>RECON</strong><code>recon</code><small>hosts / routes / assets</small></div>
+                <div class="map-step"><span>02</span><strong>DOMAIN MODEL</strong><code>domain-model</code><small>archetype / surfaces</small></div>
+                <div class="map-step"><span>03</span><strong>PLANNER</strong><code>planner</code><small>ranked techniques</small></div>
+                <div class="map-step map-step-active"><span>04</span><strong>SKILL EXECUTION</strong><code>skill.yaml</code><small>scripts / runbooks</small></div>
+                <div class="map-step"><span>05</span><strong>IMPACT VERIFY</strong><code>impact-verifier</code><small>candidate / proof</small></div>
+                <div class="map-step"><span>06</span><strong>REPORT</strong><code>reporting</code><small>manifest / export</small></div>
+              </div>
+              <div class="map-controls">
+                <div class="map-control"><span>REGISTRY</span><code>tools/registry/*.yaml</code><small>99 registered tools / capability mapped</small></div>
+                <div class="map-control"><span>GOVERNANCE</span><code>4 safety tiers</code><small>scope gate / rate limit / circuit breaker</small></div>
+                <div class="map-control"><span>TRACE</span><code>.bb/traces/runs.jsonl</code><small>timing / exit code / artifacts</small></div>
+              </div>
+              <div class="map-output"><span>OUTPUT</span><code>$OUTDIR/evidence/</code><span class="output-note">LOCAL ONLY</span></div>
+            </div>
+            <div class="figure-foot"><span>target + scope -> controlled execution -> evidence</span><span>v3.1 / thin harness / fat skills</span></div>
+          </figure>
+        </div>
+
+        <div class="hero-install-row">
+          <div class="hero-install-label"><span>INSTALL / UNIX SHELL</span><span>macOS / Linux</span></div>
+          <div class="hero-command command-spec">
+            <div class="spec-head"><span>curl bootstrap</span><button class="copy-btn" type="button" aria-label="Copy install command" onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent).then(()=>{this.textContent='copied';setTimeout(()=>this.textContent='copy',1500)})">copy</button></div>
+            <div class="spec-line"><span class="prompt">$</span><code id="install-cmd">curl -fsSL https://raw.githubusercontent.com/Mr-Neutr0n/bounty-harness/main/install.sh | sh -s --</code></div>
+          </div>
+        </div>
+
+        <div class="hero-facts" aria-label="BountyHarness facts">
+          <div><strong>46</strong><span>skill packages</span></div>
+          <div><strong>99</strong><span>registered tools</span></div>
+          <div><strong>4</strong><span>safety tiers</span></div>
+          <div><strong>MIT</strong><span>open source license</span></div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="hero-install">
-    <div class="hero-install-label"><span class="eyebrow">Quick install</span><span>macOS · Linux</span></div>
-    <div class="command-bar">
-      <span class="prompt">$</span>
-      <code id="install-cmd">curl -fsSL https://raw.githubusercontent.com/Mr-Neutr0n/bounty-harness/main/install.sh | sh</code>
-      <button class="copy-btn" type="button" onclick="navigator.clipboard.writeText(document.getElementById('install-cmd').textContent).then(()=>{this.textContent='copied ✓';setTimeout(()=>this.textContent='copy',1500)})">copy</button>
-    </div>
-  </div>
-</div></section>
+    </section>
 
-<!-- STATS -->
-<div class="shell"><section class="section" style="padding-top:32px;">
-  <div class="stats-strip" style="border-radius:8px;">
-    <div class="stat"><span class="num">46</span><span class="label">skill packages</span><span class="sub">recon → reporting</span></div>
-    <div class="stat"><span class="num">99</span><span class="label">tools registered</span><span class="sub">subfinder → nuclei</span></div>
-    <div class="stat"><span class="num">4</span><span class="label">safety tiers</span><span class="sub">passive → destructive</span></div>
-    <div class="stat"><span class="num">0</span><span class="label">telemetry</span><span class="sub">local-only evidence</span></div>
+    <section class="home-section control-section" id="architecture">
+      <div class="home-shell">
+        <div class="section-intro">
+          <span class="section-index">02 / CONTROL SURFACE</span>
+          <div><h2>Every transition has a file, a gate, or a trace.</h2><p>The shell stays small. Context initialization, workflow dispatch, registry checks, safety enforcement, and trace capture are explicit. The security logic lives in the skill packages.</p></div>
+        </div>
+        <div class="control-ledger">
+          <div class="control-row"><span class="row-index">01</span><div><h3>Context and scope</h3><p>Initialize a target, program, scope file, output directory, rate limit, and user agent before a workflow runs.</p></div><code>bb-init / bb-validate</code></div>
+          <div class="control-row"><span class="row-index">02</span><div><h3>Workflow selection</h3><p>Run a named workflow from a skill's `skill.yaml`, or let the campaign runner move from recon to plan to execution.</p></div><code>bb-run / bb-hunt</code></div>
+          <div class="control-row"><span class="row-index">03</span><div><h3>Governance and trace</h3><p>Safety tiers, scope gates, rate limits, and the circuit breaker constrain execution. Every run records timing, tier, tools, and exit code.</p></div><code>bb-tools / .bb/traces</code></div>
+          <div class="control-row"><span class="row-index">04</span><div><h3>Impact and evidence</h3><p>Candidate output is not a finding. Verification and reporting assemble reproducible artifacts under the current output directory.</p></div><code>impact-verifier / reporting</code></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section specimen-section">
+      <div class="home-shell">
+        <div class="section-intro">
+          <span class="section-index">03 / INSPECTABLE RUN</span>
+          <div><h2>The useful unit is the run, not the prompt.</h2><p>Commands remain ordinary shell commands. The surrounding context, workflow definition, trace, and evidence paths make the work reviewable by another researcher.</p></div>
+        </div>
+        <div class="specimen-grid">
+          <div class="run-specimen">
+            <div class="specimen-head"><span>EXAMPLE / DOCUMENTED COMMANDS</span><span>NO TARGET REQUESTS HERE</span></div>
+            <pre><span class="code-muted">$</span> bb-init example.com --program example --scope-file scope.txt
+<span class="code-muted">  writes</span> .bb/context.env
+<span class="code-muted">  writes</span> .bb/context.json
+
+<span class="code-muted">$</span> bb-run recon passive-subdomains
+<span class="code-muted">$</span> bb-run domain-model profile
+<span class="code-muted">$</span> bb-run planner generate-plan-safe
+
+<span class="code-muted">$</span> bb-run reporting batch-generate
+<span class="code-muted">  reads</span> candidate results and evidence
+<span class="code-muted">  writes</span> report and evidence manifest</pre>
+          </div>
+          <div class="evidence-ledger">
+            <div class="specimen-head"><span>EVIDENCE / REQUIRED MATERIAL</span><span>LOCAL OUTPUT</span></div>
+            <dl>
+              <div><dt>REQUEST</dt><dd><code>evidence/&lt;finding&gt;/request.txt</code></dd></div>
+              <div><dt>RESPONSE</dt><dd><code>evidence/&lt;finding&gt;/response.txt</code></dd></div>
+              <div><dt>PROOF</dt><dd><code>evidence/&lt;finding&gt;/poc.sh</code></dd></div>
+              <div><dt>VISUAL</dt><dd><code>evidence/&lt;finding&gt;/screenshot.png</code></dd></div>
+              <div><dt>MANIFEST</dt><dd>timestamp and tool versions</dd></div>
+            </dl>
+            <p class="ledger-note">The repository treats scanner output as a candidate. Impact verification and false-positive review happen before reporting.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section safety-section">
+      <div class="home-shell">
+        <div class="section-intro">
+          <span class="section-index">04 / SAFETY MODEL</span>
+          <div><h2>Safety is part of the execution path.</h2><p>Workflows declare risk. The harness checks scope and applies the highest required tier instead of treating every command as equivalent.</p></div>
+        </div>
+        <div class="safety-ledger">
+          <div class="safety-row"><strong>passive</strong><span>read-only discovery or local analysis</span><span>gate: none</span></div>
+          <div class="safety-row"><strong>active-safe</strong><span>target interaction that should remain read-only</span><span>gate: rate limit</span></div>
+          <div class="safety-row safety-row-warn"><strong>intrusive</strong><span>payloads, fuzzing, WAF-triggering scans</span><span>gate: non-empty scope file</span></div>
+          <div class="safety-row safety-row-danger"><strong>destructive-manual</strong><span>data modification or privilege changes</span><span>gate: human approval</span></div>
+        </div>
+        <div class="safety-notes"><p><strong>Scope gate.</strong> Without a non-empty scope file, an intrusive campaign is automatically capped to `active-safe`.</p><p><strong>Circuit breaker.</strong> Consecutive workflow failures put a target into cooldown until the breaker is reset.</p><p><strong>Trace.</strong> Run records stay under `.bb/traces/`; target data and evidence paths are local and gitignored.</p></div>
+      </div>
+    </section>
+
+    <section class="home-section inventory-section" id="skills">
+      <div class="home-shell">
+        <div class="section-intro">
+          <span class="section-index">05 / SKILL CATALOG</span>
+          <div><h2>Skills are inspectable packages.</h2><p>Each package carries its router, executable workflow registry, scripts, runbooks, payloads, evidence rules, and standards context. The harness dispatches; the package contains the method.</p><a class="text-link" href="./skills.html">Browse the 46 packages <span aria-hidden="true">-&gt;</span></a></div>
+        </div>
+        <div class="inventory-list">
+          <div><span>RECON + PLANNING</span><p>recon / domain-model / technique-kb / planner / coverage / asset-graph / traffic-corpus / campaign</p></div>
+          <div><span>WEB VULNERABILITIES</span><p>xss / sqli / ssrf / rce / file-upload / cors-csrf / race-condition / http-protocol / nuclei-scanner</p></div>
+          <div><span>IDENTITY + WORKFLOW</span><p>auth / api / persona / cross-account / business-logic / impact-verifier / scope-manager</p></div>
+          <div><span>SPECIALIZED AUDITS</span><p>cicd-security / graphql-audit / web3-audit / meme-coin-audit / identity-domain / binary-analysis</p></div>
+          <div><span>RESEARCH + REPORTING</span><p>osint / vuln-intel / standard-catalog / reporting / program-memory / triage-validation / enrichment</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-close">
+      <div class="home-shell"><span class="section-index">END / START LOCAL</span><h2>Inspect the workflow. Run what fits the scope.</h2><p>MIT licensed. macOS and Linux. No account and no telemetry. Use BountyHarness only on systems you own or are explicitly authorized to test.</p><div class="close-actions"><a class="btn btn-primary" href="./install.html">Install BountyHarness <span aria-hidden="true">-&gt;</span></a><a class="text-link" href="./docs.html">Read the docs <span aria-hidden="true">-&gt;</span></a></div></div>
+    </section>
   </div>
-</section></div>
-
-<!-- FEATURE CARDS -->
-<div class="shell"><section class="section">
-  <span class="eyebrow">Why BountyHarness</span>
-  <h2 style="margin-bottom:24px;">One harness. Every bug class.</h2>
-  <div style="display:grid;gap:14px;grid-template-columns:repeat(12,1fr);">
-    <article class="card" style="grid-column: span 7;"><div class="card-icon">◈</div><h3>Fat skills, thin harness</h3><p>46 skills hold the real logic: scripts, payloads, runbooks, evidence rules, and reporting guidance. The harness is 261 lines. Add a bug class without touching core. <a href="./skills.html" style="font-size:0.8rem;">Browse all 46 →</a></p></article>
-    <article class="card" style="grid-column: span 5;"><div class="card-icon">⬡</div><h3>Autonomous campaigns</h3><p><code class="inline">bb-hunt target.com</code> from one URL, bounded by time budget, resumable.</p></article>
-    <article class="card" style="grid-column: span 4;"><div class="card-icon">⬢</div><h3>Evidence or it didn't happen</h3><p>Every finding needs request, response, PoC, and impact proof. Scanner output is never a report.</p></article>
-    <article class="card" style="grid-column: span 4;"><div class="card-icon">⬣</div><h3>Safety tiers that gate</h3><p>Intrusive auto-caps to active-safe without a scope file. Circuit breaker kills runaways.</p></article>
-    <article class="card" style="grid-column: span 4;"><div class="card-icon">⬔</div><h3>Tool registry</h3><p>99 tools by capability and risk tier. <code class="inline">bb-tools doctor</code> checks health.</p></article>
-    <article class="card" style="grid-column: span 12;display:flex;gap:20px;align-items:center;flex-wrap:wrap;"><div class="card-icon" style="margin-bottom:0;">⬕</div><div><h3 style="margin:0;">Knowledge that compounds</h3><p style="margin:4px 0 0;">Program memory, asset graphs, traffic corpus, technique KB. Each engagement makes the next sharper.</p></div></article>
-  </div>
-</section></div>
-
-<!-- HOW IT WORKS STRIP -->
-<div class="shell"><section class="section">
-  <span class="eyebrow">The loop</span>
-  <h2 style="margin-bottom:24px;">Six steps. Every engagement.</h2>
-  <div class="artifact" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;background:var(--surface);">
-    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">①</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">UNDERSTAND<br><span style="color:var(--text-dim);">target + scope</span></div></div>
-    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">②</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">MODEL<br><span style="color:var(--text-dim);">assets + surfaces</span></div></div>
-    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">③</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">PLAN<br><span style="color:var(--text-dim);">ranked techniques</span></div></div>
-    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">④</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">EXECUTE<br><span style="color:var(--text-dim);">rate-limited</span></div></div>
-    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">⑤</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">VERIFY<br><span style="color:var(--text-dim);">impact + PoC</span></div></div>
-    <div style="text-align:center;padding:12px;"><div style="color:var(--accent);font-size:1.4rem;">⑥</div><div style="font-size:0.75rem;color:var(--text-2);margin-top:6px;">REPORT<br><span style="color:var(--text-dim);">evidence pack</span></div></div>
-  </div>
-  <p style="text-align:center;margin-top:16px;"><a href="./how-it-works.html" style="font-size:0.85rem;">See the full architecture →</a></p>
-</section></div>
-
-<!-- CTA -->
-<div class="shell"><section class="section" style="text-align:center;padding-bottom:64px;">
-  <h2 style="margin-bottom:12px;">Ready to hunt?</h2>
-  <p style="max-width:50ch;margin:0 auto 20px;color:var(--text-2);">Install in 30 seconds. Works on macOS and Linux. No account, no telemetry, no BS.</p>
-  <a class="btn btn-primary" href="./install.html">Get started: install in 30s</a>
-  <p class="small" style="margin-top:12px;">Requires Python 3.11+ · Git · Works from any directory</p>
-</section></div>
-
 </main>
-<footer class="site"><div class="shell footer-inner">
-  <span><span style="color:var(--accent)">◆</span> MIT License · Use only on systems you own or are authorized to test.</span>
-  <span><a href="https://github.com/Mr-Neutr0n/bounty-harness">GitHub</a> · <a href="./docs.html">Docs</a> · <a href="./security.html">Security</a></span>
+
+<footer class="site"><div class="footer-inner">
+  <span>BountyHarness / MIT / local-only evidence</span>
+  <span><a href="https://github.com/Mr-Neutr0n/bounty-harness">Source</a><span aria-hidden="true"> / </span><a href="./docs.html">Docs</a><span aria-hidden="true"> / </span><a href="./faq.html">FAQ</a></span>
 </div></footer>
 </body>
 </html>
